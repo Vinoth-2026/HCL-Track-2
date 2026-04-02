@@ -2,6 +2,19 @@
 #include<stdio.h>
 
 enum Status{PENDING=-1, SHIPPED=0, DELIVERED=1};
+
+enum Status update(enum Status);
+void display(enum Status);
+
+int main(){
+    enum Status order=PENDING;
+    display(order);
+    order=update(order);
+    display(order);
+    order=update(order);
+    display(order);
+    return 0;
+}
 enum Status update(enum Status s){
     switch(s){
         case PENDING:
@@ -30,13 +43,4 @@ void display(enum Status s){
     default:
         break;
     }
-}
-int main(){
-    enum Status order=PENDING;
-    display(order);
-    order=update(order);
-    display(order);
-    order=update(order);
-    display(order);
-    return 0;
 }

@@ -13,7 +13,7 @@ int main(){
     }else{
         unsigned int ifactorial=1;
         for(int i=2;i<=inum;i++)
-        ifactorial*=i;
+            ifactorial*=i;
         printf("%d",ifactorial);
     }
     return 0;

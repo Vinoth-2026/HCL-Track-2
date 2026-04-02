@@ -4,6 +4,41 @@
 int cQueue[MAX];
 int front=-1,rear=-1;
 
+int isFull();
+int isEmpty();
+void enqueue(int);
+void dequeue();
+void display();
+
+int main(){
+    int ch=1;
+    while(ch!=4){
+        printf("1.ENQUEUE\n"
+                "2.DEQUEUE\n"
+                "3.DISPLAY\n"
+                "4.EXIT\n"
+                "Enter your choice:");
+        scanf("%d",&ch);
+        switch (ch){
+        case 1:
+            int element;
+            printf("Enter element:");
+            scanf("%d",&element);
+            enqueue(element);
+            break;
+        case 2:
+            dequeue();
+            break;
+        case 3:
+            display();
+            break;
+        default:
+            printf("Invalid option.");
+            break;
+        }
+    }
+    return 0;
+}
 int isFull(){
     return (rear+1)%MAX==front;
 }
@@ -46,34 +81,4 @@ void display(){
         }
         printf("\n");
     }
-}
-
-int main(){
-    int ch=1;
-    while(ch!=4){
-        printf("1.ENQUEUE\n"
-                "2.DEQUEUE\n"
-                "3.DISPLAY\n"
-                "4.EXIT\n"
-                "Enter your choice:");
-        scanf("%d",&ch);
-        switch (ch){
-        case 1:
-            int element;
-            printf("Enter element:");
-            scanf("%d",&element);
-            enqueue(element);
-            break;
-        case 2:
-            dequeue();
-            break;
-        case 3:
-            display();
-            break;
-        default:
-            printf("Invalid option.");
-            break;
-        }
-    }
-    return 0;
 }
